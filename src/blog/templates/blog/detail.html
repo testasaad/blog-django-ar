@@ -8,5 +8,32 @@
         <h3>{{post.title}}</h3>
         <p>{{post.content}}</p>
     </div>
+    <div>
+        <h2 class="border-bottom mt-5 mb-3">التعليقات ({{comments.count}})</h2>
+        {% for comment in comments %}
+            <ul class="p-3 comment">
+                <h6 class="border-bottom p-2">( {{comment.name}} ) <span class="text-secondary">{{comment.comment_date|date:'d-m-Y'}}</span></h6>
+                {{comment.body}}
+            </ul>
+                 
+        {% empty %}
+            <h6 class="text-center p-4 comment">لا يوجد تعليقات.</h6>
+        {% endfor %}
+        
+        
+        
+        {% comment %} {% if comments %}
+        {% for comment in comments %}
+        <div class="mb-3 p-3 comment">
+            <h6 class="border-bottom p-2">( {{comment.name}} ) <span class="text-secondary">{{comment.comment_date|date:'d-m-Y' }}</span></h6>
+            <p class="mb-0">{{comment.body}}</p>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="text-center mb-3 p-4 comment">
+            <h5 class="mb-0">لا يوجد تعليقات. </h5>
+        </div>
+        {% endif %} {% endcomment %}
+    </div>
     
 {% endblock content %}

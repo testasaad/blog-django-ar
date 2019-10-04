@@ -21,7 +21,7 @@ body{
 }
 
 .bg-light{
-    background-color: #ccc !important;
+    background-color: #eee !important;
 }
 
 
@@ -42,3 +42,11 @@ body{
     padding-bottom: 0;
 }
 
+/* End Sidebar */
+
+/* Start Comment */
+.comment{
+    background-color: #f8f8f8;
+    border: 1px dashed #ccc;
+}
+/* End Comment */
