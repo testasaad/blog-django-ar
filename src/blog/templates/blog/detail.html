@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    
+    {% load crispy_forms_tags %}
     <div class="border p-3 mb-3">
         <img class="img-fluid" rounded-circle width="70px" src="https://image.flaticon.com/icons/svg/149/149074.svg" alt="صورة الناشر">
         <span class="text-secondary"> نشر في {{post.post_date |date:'d-m-Y'}} </span>
@@ -20,8 +20,19 @@
             <h6 class="text-center p-4 comment">لا يوجد تعليقات.</h6>
         {% endfor %}
         
-        
-        
+        <h3 class="border-bottom pb-3 mb-3 mt-5">إضافة تعليق جديد</h3>
+        <div class="vorder p-4 mb-5 mt-4">
+            <form method="POST">
+                {% csrf_token %}
+                {{comment_form|crispy}}
+                <input class"btn btn-secondary" type="submit" value="نشر التعليق">
+            </form> 
+        </div>   
+
+
+
+
+
         {% comment %} {% if comments %}
         {% for comment in comments %}
         <div class="mb-3 p-3 comment">

@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'crispy_forms',
+
     'blog',
     'user',
 ]
@@ -126,3 +129,6 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, "static"),
 #     r"C:\Users\Root\Desktop\projectDjango\tutorials\Blogger\src\static",
 # ]
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
